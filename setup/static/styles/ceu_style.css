@@ -89,16 +89,28 @@ textarea {
     height: 15vh;
 }
 
-/* customização do tooltip */
-.custom-tooltip {
-    width: 40px; /* definir largura e altura do círculo */
-    height: 40px;
-    border-radius: 50%; /* transformar em círculo */
-    background-color: #123C69; /* cor de fundo do círculo */
-    color: #802020; /* cor do texto */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
+/* Customização do tooltip */
+.tooltip-inner {
+    background-color: var(--darkBlue);
+    color: rgb(255, 255, 255);
+}
+
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+    border-top-color: var(--darkBlue);
+}
+
+.bs-tooltip-end .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+    border-right-color: var(--darkBlue);
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+    border-bottom-color: var(--darkBlue);
+}
+
+.bs-tooltip-start .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+    border-left-color: var(--darkBlue);
+}
