@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites', # [06/11/2023]
     
-    # Apps do Django-allauth
-    'allauth', # [06/11/2023]
-    'allauth.account', # [06/11/2023]
-    'allauth.socialaccount', # [06/11/2023]    
+    # Apps do Django-allauth [06/11/2023]
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',    
     
     # Apps do Projeto Integrador 2
     'contas', # app relacionado ao Django-allauth [06/11/2023]
@@ -73,7 +73,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # [06/11/2023]
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -159,7 +159,10 @@ SITE_ID = 1
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
+
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
