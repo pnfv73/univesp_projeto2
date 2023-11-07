@@ -7,8 +7,13 @@
 <h2>Sign Up (Cadastro)</h2>
 <form method="post">
     {% csrf_token %}
+    <!-- Método 1: Início -->
     <!-- {{ form.as_p }} -->
-    
+    <!-- Método 2: Fim -->
+
+    <!-- OU -->
+
+    <!-- Método 2: Início -->
     {{ form.non_field_errors | safe }}
     <input type="hidden" name="remember" value="true" />
     <div>
@@ -32,7 +37,8 @@
         <label for="password2" class="sr-only">Password</label>
         {{ form.password2 }}
       </div>
-    </div>    
+    </div> 
+    <!-- Método 2: Fim -->   
 
     <button type="submit">Sign Up</button>
 </form>
